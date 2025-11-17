@@ -23,7 +23,7 @@ export default function Hero({ onExplore }) {
       <div className="relative z-10 mx-auto flex w-full max-w-7xl items-center justify-between px-6 pt-6">
         <div className="flex items-center gap-3">
           <LogoIcon className="h-10 w-10" />
-          <span className="heading-arabic text-lg text-emerald-900/90">رِزْق.آي</span>
+          <span className="text-lg font-semibold text-emerald-900/90">Rizq.AI</span>
         </div>
         <button className="rounded-full border border-emerald-900/10 bg-white/60 px-4 py-2 text-emerald-900/70 shadow-sm backdrop-blur-md hover:bg-white/80">Menu</button>
       </div>
@@ -36,7 +36,7 @@ export default function Hero({ onExplore }) {
           transition={{ duration: 0.8, ease: 'easeOut' }}
           className="rounded-full border border-emerald-900/10 bg-white/60 px-4 py-2 text-emerald-900/80 shadow-sm backdrop-blur-md"
         >
-          <span className="heading-arabic">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</span>
+          <span className="text-sm font-medium">In the name of God, the Most Merciful, the Most Compassionate</span>
         </motion.div>
       </div>
 
@@ -50,19 +50,19 @@ export default function Hero({ onExplore }) {
 
       {/* Headline + CTA */}
       <div className="relative z-10 mx-auto mt-2 max-w-5xl px-6 pb-20 text-center">
-        <h1 className="mx-auto bg-gradient-to-b from-emerald-900 to-emerald-700 bg-clip-text text-5xl font-extrabold tracking-tight text-transparent heading-arabic sm:text-6xl">
-          هُدًى وَرِزْقٌ — نورٌ يهدي إلى الخير والبركة
+        <h1 className="mx-auto bg-gradient-to-b from-emerald-900 to-emerald-700 bg-clip-text text-5xl font-extrabold tracking-tight text-transparent sm:text-6xl">
+          Guidance and Rizq — a light leading to goodness and blessing
         </h1>
         <p className="mx-auto mt-4 max-w-2xl text-base text-emerald-900/70 sm:text-lg">
-          منصة تجمع بين العلم والإحسان والتقنية؛ لتفتح لك أبواب الرزق الحلال بإذن الله.
+          A platform that unites knowledge, excellence, and technology to open doors to pure, ethical provision.
         </p>
         <div className="mt-8 flex items-center justify-center gap-4">
           <button onClick={onExplore} className="group inline-flex items-center gap-2 rounded-full bg-gradient-to-br from-emerald-500 to-emerald-700 px-7 py-3 text-white shadow-[0_0_0_1px_rgba(14,138,99,0.25)_inset,0_18px_60px_-20px_rgba(14,138,99,0.65)] transition hover:brightness-110">
-            استكشف رزقك
+            Explore your Rizq
             <ArrowRight className="transition group-hover:translate-x-0.5" size={18} />
           </button>
           <button className="rounded-full border border-emerald-900/10 bg-white/70 px-6 py-3 text-emerald-900/80 shadow-sm backdrop-blur-md hover:bg-white">
-            كيف يعمل؟
+            How it works?
           </button>
         </div>
       </div>
