@@ -18,7 +18,7 @@ function App() {
   }
 
   return (
-    <div className="min-h-screen bg-[#0E0E0E]">
+    <div className="min-h-screen bg-[#E9FFF4]">
       <Hero onExplore={handleExplore} />
       <div ref={exploreRef}>
         <About />

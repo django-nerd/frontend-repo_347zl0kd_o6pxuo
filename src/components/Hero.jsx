@@ -1,55 +1,68 @@
 import React from 'react'
-import { Menu, ArrowRight } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import LogoIcon from './LogoIcon'
 import IslamicBook from './IslamicBook'
 import Ornament from './Ornament'
+import HeavenPattern from './HeavenPattern'
+import ParallaxBubbles from './ParallaxBubbles'
+import { motion } from 'framer-motion'
 
 export default function Hero({ onExplore }) {
   return (
-    <section className="relative min-h-[92vh] w-full overflow-hidden bg-[#0E0E0E] text-white">
-      {/* Ambient background */}
-      <div className="pointer-events-none absolute inset-0">
-        <div className="absolute -inset-[25%] mx-auto h-[140%] w-[140%] rounded-full opacity-60 blur-[120px]" style={{
-          background: 'radial-gradient(60% 60% at 50% 40%, rgba(228,184,90,0.15) 0%, rgba(1,107,97,0.25) 35%, rgba(14,14,14,0) 70%)'
-        }} />
-        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.06)_0%,rgba(255,255,255,0)_40%)]" />
-        <div className="absolute inset-0" style={{ backgroundImage: 'radial-gradient(rgba(255,255,255,0.06) 1px, transparent 1px)', backgroundSize: '24px 24px' }} />
-      </div>
+    <section className="relative min-h-[96vh] w-full overflow-hidden bg-[#E9FFF4] text-[#0B2C23]">
+      {/* Heavenly ambient background */}
+      <HeavenPattern />
 
-      {/* Floating ornament */}
-      <Ornament className="right-10 top-16 h-40 w-40 sm:right-20 sm:top-24 md:right-40 md:top-28 md:h-56 md:w-56" />
+      {/* Floating parallax bubbles (noor energy) */}
+      <ParallaxBubbles className="absolute inset-0" />
+
+      {/* Floating ornament for luxury accent */}
+      <Ornament className="right-10 top-16 h-40 w-40 sm:right-20 sm:top-24 md:right-40 md:top-28 md:h-56 md:w-56 opacity-80" />
 
       {/* Minimal navbar */}
       <div className="relative z-10 mx-auto flex w-full max-w-7xl items-center justify-between px-6 pt-6">
         <div className="flex items-center gap-3">
-          <LogoIcon className="h-9 w-9" />
-          <div className="sr-only">Rizq.ai</div>
+          <LogoIcon className="h-10 w-10" />
+          <span className="heading-arabic text-lg text-emerald-900/90">رِزْق.آي</span>
         </div>
-        <button className="rounded-full border border-white/10 bg-white/5 p-2 text-white/80 backdrop-blur hover:bg-white/10">
-          <Menu size={18} />
-        </button>
+        <button className="rounded-full border border-emerald-900/10 bg-white/60 px-4 py-2 text-emerald-900/70 shadow-sm backdrop-blur-md hover:bg-white/80">Menu</button>
       </div>
 
-      {/* Islamic 3D-styled vector */}
-      <div className="relative z-0 mx-auto mt-8 h-[320px] w-full max-w-6xl px-6 sm:h-[360px]">
+      {/* Bismillah shimmer */}
+      <div className="relative z-10 mt-10 flex items-center justify-center px-6">
+        <motion.div
+          initial={{ opacity: 0, y: 8 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: 'easeOut' }}
+          className="rounded-full border border-emerald-900/10 bg-white/60 px-4 py-2 text-emerald-900/80 shadow-sm backdrop-blur-md"
+        >
+          <span className="heading-arabic">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</span>
+        </motion.div>
+      </div>
+
+      {/* Central 5D symbol: Quran + Rizq + Guidance + Heaven */}
+      <div className="relative z-0 mx-auto mt-6 h-[320px] w-full max-w-6xl px-6 sm:h-[380px]">
+        <div className="absolute -inset-6 rounded-[32px] opacity-60 blur-2xl" style={{
+          background: 'radial-gradient(60% 60% at 50% 40%, rgba(14,138,99,0.20) 0%, rgba(233,255,244,0.60) 35%, rgba(255,255,255,0) 70%)'
+        }} />
         <IslamicBook className="h-full w-full" />
       </div>
 
       {/* Headline + CTA */}
-      <div className="relative z-10 mx-auto mt-4 max-w-5xl px-6 pb-20 text-center">
-        <h1 className="mx-auto bg-gradient-to-b from-white to-white/80 bg-clip-text text-5xl font-extrabold tracking-tight text-transparent heading-arabic sm:text-6xl">
-          هُدًى وَرِزْقٌ — Divine Guidance. Real-World Rizq.
+      <div className="relative z-10 mx-auto mt-2 max-w-5xl px-6 pb-20 text-center">
+        <h1 className="mx-auto bg-gradient-to-b from-emerald-900 to-emerald-700 bg-clip-text text-5xl font-extrabold tracking-tight text-transparent heading-arabic sm:text-6xl">
+          هُدًى وَرِزْقٌ — نورٌ يهدي إلى الخير والبركة
         </h1>
-        <p className="mx-auto mt-4 max-w-2xl text-base text-white/70 sm:text-lg">
-          Where technology meets trust. Find halal income, guidance & opportunity.
+        <p className="mx-auto mt-4 max-w-2xl text-base text-emerald-900/70 sm:text-lg">
+          منصة تجمع بين العلم والإحسان والتقنية؛ لتفتح لك أبواب الرزق الحلال بإذن الله.
         </p>
         <div className="mt-8 flex items-center justify-center gap-4">
-          <button onClick={onExplore} className="group inline-flex items-center gap-2 rounded-full bg-[#E4B85A] px-6 py-3 text-[#0E0E0E] shadow-[0_0_0_1px_rgba(228,184,90,0.4)_inset,0_12px_40px_-12px_rgba(228,184,90,0.5)] transition hover:brightness-110">
-            Explore Rizq
+          <button onClick={onExplore} className="group inline-flex items-center gap-2 rounded-full bg-gradient-to-br from-emerald-500 to-emerald-700 px-7 py-3 text-white shadow-[0_0_0_1px_rgba(14,138,99,0.25)_inset,0_18px_60px_-20px_rgba(14,138,99,0.65)] transition hover:brightness-110">
+            استكشف رزقك
             <ArrowRight className="transition group-hover:translate-x-0.5" size={18} />
           </button>
-          <button className="rounded-full border border-white/10 px-5 py-3 text-white/80 hover:border-white/20 hover:bg-white/5">
-            How it works
+          <button className="rounded-full border border-emerald-900/10 bg-white/70 px-6 py-3 text-emerald-900/80 shadow-sm backdrop-blur-md hover:bg-white">
+            كيف يعمل؟
           </button>
         </div>
       </div>

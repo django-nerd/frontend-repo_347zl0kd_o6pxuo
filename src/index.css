@@ -11,43 +11,30 @@
     --font-ibm-plex: 'IBM Plex Sans', system-ui, sans-serif;
     --font-manrope: 'Manrope', system-ui, sans-serif;
     --font-arabic-display: 'Reem Kufi', 'Amiri', 'Noto Kufi Arabic', system-ui, sans-serif;
+    --emerald-ink: #0E8A63;
+    --mint: #E9FFF4;
+    --sage: #CFEDE2;
+    --gold: #D9A74A;
   }
 
-  html {
-    font-family: var(--font-sans);
-    font-feature-settings: "rlig" 1, "calt" 1;
-  }
-
-  body {
-    @apply antialiased;
-  }
+  html { font-family: var(--font-sans); font-feature-settings: "rlig" 1, "calt" 1; }
+  body { @apply antialiased; background: var(--mint); }
 }
 
 /* Display font for Arabic/hero headings */
-.heading-arabic {
-  font-family: var(--font-arabic-display);
-  letter-spacing: 0.2px;
+.heading-arabic { font-family: var(--font-arabic-display); letter-spacing: 0.2px; }
+
+/* Glass card and glow helpers */
+.glass { @apply border border-emerald-900/10 bg-white/60 backdrop-blur-md shadow-sm; }
+.lux { box-shadow: 0 0 0 1px rgba(217,167,74,0.16) inset, 0 24px 60px -28px rgba(14,138,99,0.35); }
+
+/* Subtle shimmering light */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
 }
-
-/* Custom utility classes for shadcn/ui patterns */
-@layer utilities {
-  .animate-in {
-    animation-name: animateIn;
-    animation-duration: 350ms;
-    --tw-enter-opacity: initial;
-    --tw-enter-scale: initial;
-    --tw-enter-rotate: initial;
-    --tw-enter-translate-x: initial;
-    --tw-enter-translate-y: initial;
-  }
-
-  .animate-out {
-    animation-name: animateOut;
-    animation-duration: 350ms;
-    --tw-exit-opacity: initial;
-    --tw-exit-scale: initial;
-    --tw-exit-rotate: initial;
-    --tw-exit-translate-x: initial;
-    --tw-exit-translate-y: initial;
-  }
+.shimmer {
+  background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,.6) 20%, rgba(255,255,255,0) 40%);
+  background-size: 200% 100%;
+  animation: shimmer 4s linear infinite;
 }
